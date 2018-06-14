@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>独角兽-致力虚幻引擎开发者</title>
+		<meta name="description" content="独角兽,虚幻引擎开发者,虚幻引擎开发,虚幻引擎,虚幻引擎4,虚幻引擎5,UE4,UE5,UnrealEngine,UnrealEngine4,Unreal,Unreal Engine" />
+		<meta name="keywords" content="独角兽,虚幻引擎开发者,虚幻引擎开发,虚幻引擎,虚幻引擎4,虚幻引擎5,UE4,UE5,UnrealEngine,UnrealEngine4,Unreal,Unreal Engine" />
+		<link rel="shortcut icon" href="../static/img/logo.png">
+		<link rel="stylesheet" href="../static/main/css/main.css">
+		<script src="//vuejs.org/js/vue.min.js"></script>
+		<link rel="stylesheet" href="//unpkg.com/iview@2.14.2/dist/styles/iview.css">
+		<script src="//unpkg.com/iview@2.14.2/dist/iview.min.js"></script>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({
+				google_ad_client: "ca-pub-8092648372045600",
+				enable_page_level_ads: true
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="app">
+			<div class="layout">
+				<layout>
+					<affix>
+						<i-header class="fix-header">
+							<i-menu mode="horizontal" theme="dark" active-name="1">
+								<div class="container">
+									<row>
+										<i-col span="1">
+											<img class="layout-logo" src="../static/img/logo.png" />
+										</i-col>
+										<i-col span="10">
+											<div class="layout-nav">
+												<menu-item name="1">
+													首页
+												</menu-item>
+												<submenu name="2">
+													<template slot="title">
+														分类浏览
+													</template>
+													<menu-item name="3-1">综合</menu-item>
+													<hr />
+													<menu-item name="3-2">蓝图</menu-item>
+													<menu-item name="3-3">动画</menu-item>
+													<menu-item name="3-4">渲染</menu-item>
+													<hr/>
+													<menu-item name="3-5">安卓</menu-item>
+													<menu-item name="3-6">IOS</menu-item>
+													<menu-item name="3-7">HTML5</menu-item>
+													<hr />
+													<menu-item name="3-8">其他</menu-item>
+												</submenu>
+												<menu-item name="3">
+													资源模型
+												</menu-item>
+												<menu-item name="4">
+													视频教程
+												</menu-item>
+											</div>
+										</i-col>
+										<i-col span="7">
+											<hr style="color: #5b6270; border-color: #5b6270;" />
+											<auto-complete v-show="searchshow" class="layout-nav-input-search" v-model="searchvalue" :data="data3" :filter-method="filterMethod" placeholder="input here">
+											</auto-complete>
+
+										</i-col>
+										<i-col span="6">
+											<div class="layout-nav-left">
+												<img :class="[searchshow?'layout-nav-img':'layout-nav-img-tran']" src="../static/img/search.svg" @click="searchshow=!searchshow;" />
+												<poptip trigger="hover" placement="bottom" width="140px">
+													<img class="layout-nav-img" src="../static/img/wechat.svg" />
+													<div slot="content">
+														<img style="margin: 0 20px;" src="../static/img/wechat.jpg">
+														<h3>扫描二维码关注开发者</h3>
+													</div>
+												</poptip>
+												<dropdown>
+													<a href="javascript:void(0)">
+														<Icon type="document-text" color="#ed3f14" size="18" style="margin: 20px 15px auto 15px;"></Icon>
+													</a>
+													<dropdown-menu slot="list">
+														<dropdown-item>写文章</dropdown-item>
+														<dropdown-item>提问题</dropdown-item>
+													</dropdown-menu>
+												</dropdown>
+
+												<img class="layout-nav-img" src="../static/img/user.svg" />
+											</div>
+										</i-col>
+									</row>
+
+								</div>
+							</i-menu>
+						</i-header>
+					</affix>
+					<i-content class="content">
+						<div class="container">
+							<row class="ad-bar">
+								<i-col span="16">
+									<carousel autoplay v-model="value2" loop>
+										<carousel-item>
+											<img class="ad-img" src="../static/img/ad/ad1.png" />
+										</carousel-item>
+										<carousel-item>
+											<img class="ad-img" src="../static/img/ad/ad2.png" />
+										</carousel-item>
+										<carousel-item>
+											<img class="ad-img" src="../static/img/ad/ad3.png" />
+										</Carousel-item>
+										<carousel-item>
+											<img class="ad-img" src="../static/img/ad/ad1.png" />
+										</carousel-item>
+									</carousel>
+								</i-col>
+								<i-col span="8">
+									<div style="padding: 20px">
+										<h1 align="center">系列教程</h1>
+										</br>
+										<a :href="lesson.url" v-for="(lesson,index) in lessonList" class="ad-list">
+											<h4><span class="ad-index">{{index+1}}</span>{{lesson.name}}</h4>
+										</a>
+
+									</div>
+
+								</i-col>
+							</row>
+							<row>
+								<i-col span="17" class="article-list">
+									<tabs value="mac">
+										<tab-pane label="macOS" name="mac" icon="social-apple">
+											<card v-for="n in 10">
+												<a href="#" slot="extra">
+													<Tag color="blue">JAVA</Tag>
+													<Tag color="green">Node</Tag>
+													<Tag color="red">Git</Tag>
+													<Tag color="yellow">Weblogic</Tag>
+												</a>
+												<h3>No border title</h3>
+												<p>Content of no border type. Content of no border type. Content of no border type. Content of no border type.this is my test app wag 是多少是的撒所多 </p>
+												<row>
+													<i-col span="10" class="article-author">
+														<a href="#">
+															<img class="article-author-img" src="../static/img/me.jpg">
+															<h5>虚幻引擎开发者</h5>
+														</a>&nbsp;·&nbsp;
+														<h5>3天前</h5>
+													</i-col>
+													<i-col span="5" offset="9" style="{height:'30px'}">
+														<i-button type="ghost" size="small" shape="circle" icon="ios-book">12</i-button>
+														<i-button type="ghost" size="small" shape="circle" icon="ios-heart">12</i-button>
+														<i-button type="ghost" size="small" shape="circle" icon="chatbox-working">12</i-button>
+													</i-col>
+
+												</row>
+											</card>
+											<spin size="large">
+												<icon type="load-a" size=36 style="animation: ani-demo-spin 1s linear infinite;"></icon>
+												<div>加载更多...</div>
+											</spin>
+										</tab-pane>
+										<tab-pane label="Windows" name="win" icon="social-windows">标签二的内容</tab-pane>
+										<tab-pane label="Linux" name="linux" icon="social-tux">标签三的内容</tab-pane>
+									</tabs>
+								</i-col>
+								<i-col span="6" offset="1">
+									<div class="sidebar">
+										<card class="sidebar-card">
+											<p slot="title">
+												<Icon type="ios-pulse-strong"></Icon>
+												今日动态
+											</p>
+											<row>
+												<i-col span="12">
+													<h1 class="today-status-num">12</h1>
+													<h6 class="today-status-title">文章</h6>
+												</i-col>
+												<i-col span="12">
+													<h1 class="today-status-num">12</h1>
+													<h6 class="today-status-title">问答</h6>
+												</i-col>
+
+											</row>
+											</ul>
+										</card>
+										<card class="sidebar-card">
+											<p slot="title">
+												<Icon type="person-stalker"></Icon>
+												推荐作者
+											</p>
+											<a href="#" slot="extra" @click.prevent="changeLimit">
+												<icon type="ios-loop-strong"></icon>
+												换一批
+											</a>
+											<ul>
+												<a href="#" v-for="n in 8">
+													<img class="top-author-img" src="../static/img/me.jpg">
+
+												</a>
+												<!--<li v-for="item in randomMovieList">
+												<a :href="item.url" target="_blank">{{ item.name }}</a>
+										
+											</li>-->
+											</ul>
+										</card>
+										<card class="sidebar-card">
+											<p slot="title">
+												<Icon type="pricetags"></Icon>
+												热门标签
+											</p>
+											<a href="#" slot="extra" @click.prevent="changeLimit">
+												<icon type="ios-loop-strong"></icon>
+												换一批
+											</a>
+											<a href="#" target="_blank" v-for="tag in tags" class="hot-tag">
+												<Tag :color="tag.color">{{tag.name}}</Tag>
+
+											</a>
+										</card>
+										<card class="sidebar-card">
+											<img width="100%" src="../static/img/ue-developer-code.png" />
+										</card>
+										<card class="sidebar-card">
+											<img style="width: 100%;" src="../static/img/ad/ad-small.png">
+
+										</card>
+
+									</div>
+
+								</i-col>
+
+							</row>
+
+						</div>
+					</i-content>
+					<i-footer class="footer-container" :style="{background: '#495060'}">
+						<div class="container">
+							<row :style="{'text-align':'center'}">
+								<i-col span="6">
+									<p class="footer-title">独角兽</p>
+									<a class="footer-item" href="#">
+										<p>关于我们</p>
+									</a>
+								</i-col>
+								<i-col span="6">
+									<p class="footer-title">友情链接</p>
+									<a class="footer-item" href="https://www.unrealengine.com/zh-CN/what-is-unreal-engine-4">虚幻引擎</a><br/>
+									<a class="footer-item" href="http://wanggang.work/">站长博客</a>
+								</i-col>
+								<i-col span="6">
+									<p class="footer-title">联系方式</p>
+									<p class="footer-item">商务：189-6478-0700</p>
+
+									<p class="footer-item">邮箱：2391345853@qq.com</p>
+
+									<p class="footer-item">地址：独角兽</p>
+								</i-col>
+								<i-col span="6">
+									<p class="footer-title">虚幻引擎开发者</p>
+									<img class="footer-item-img img-rounded" src="../static/img/wechat.jpg">
+								</i-col>
+							</row>
+
+							<row>
+								<p class="footer-copyright">
+									商标声明：UnrealEngine 是 Epic Game,Inc. 在美国以及其他国家的商标
+									<br> ©2017 - 2018 鲁ICP备18007950号-1
+									<br> 本网站版权为独角兽所有·若有侵权请及时告知我们
+								</p>
+							</row>
+						</div>
+
+					</i-footer>
+				</layout>
+			</div>
+			<back-top></back-top>
+		</div>
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					value2: 0,
+					searchvalue: '',
+					searchshow: false,
+					data3: ['Steve Jobs', 'Stephen Gary Wozniak', 'Jonathan Paul Ive'],
+					lessonList: [{
+							name: '做增长黑客之前，请先做好PMF',
+							url: '#'
+						}, {
+							name: '如何玩转抖音企业号？这里有7招',
+							url: '#'
+						}, {
+							name: '以回形针PaperClip为例：拆解自媒体3.0血海时代的“变态”突围策略',
+							url: '#'
+						},
+						{
+							name: '传统思维的三个陷阱：流量为王vs联络员、控制vs自驱、同类竞争vs跨界竞争',
+							url: ''
+						}, {
+							name: 'AI语音助手：Google Assistant 新技术会是谷歌的一张王牌吗？',
+							url: '#'
+						}, {
+							name: '为什么说盒马鲜生是中国的Costco？',
+							url: '#'
+						}
+					],
+					tags: [{
+						name: 'java',
+						color: 'blue'
+					}, {
+						name: 'Node',
+						color: 'red'
+					}, {
+						name: 'Weblogiv',
+						color: 'yellow'
+					}, {
+						name: 'spring Boot',
+						color: '#E5615C'
+					}, {
+						name: '我们都是好孩子',
+						color: '#88010F'
+					}, {
+						name: '微服务',
+						color: '#1AA260'
+					}]
+				},
+				methods: {
+					show: function() {
+						this.visible = true;
+					},
+					filterMethod: function(value, option) {
+						return option.toUpperCase().indexOf(value.toUpperCase()) !== -1;
+					}
+				}
+			})
+		</script>
+
+	</body>
+
+</html>
