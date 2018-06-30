@@ -5,10 +5,10 @@
 	border-radius: 4px;
 	overflow: hidden;
 }
-.fix-header{
+
+.fix-header {
 	width: 100%;
 }
-
 
 .container {
 	margin-right: auto;
@@ -102,9 +102,9 @@
 	background-color: transparent;
 	overflow: hidden;
 	text-overflow: ellipsis;
-
 }
-.ad-list h4{
+
+.ad-list h4 {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -142,12 +142,126 @@
 	line-height: 30px;
 }
 
+.article-detail {
+	background: #fff;
+	padding: 20px;
+	border-radius: 12px;
+	margin: 20px 0 0 0;
+}
+.article-comment {
+	background: #fff;
+	padding: 20px;
+	border-radius: 12px;
+	margin: 10px 0  0;
+}
+.comment-edit-box{
+	display: inline-flex;
+	width: 100%;
+	padding-bottom: 14px;
+
+}
+.comment-edit-box img{
+	margin: 0 8px;
+}
+
+.article-title {
+	margin: 8px;
+}
+
+.tool-box {
+	left: 20px;
+	display: block;
+	top: 220px;
+	position: fixed;
+	z-index: 99;
+	background-color: #fff;
+}
+.tool-box button :hover,.tool-box .ivu-btn :hover{
+	color: #ed3f14;
+	border-color: #ed3f14 !important;
+}
+
+
+.article-title2 {
+	display: flex !important;
+	width: 100%;
+	padding-bottom: 14px;
+	line-height: 1.57;
+	border-bottom: 1px solid #e3e3e3;
+}
+
+.float-right {
+	margin-left: auto;
+	box-sizing: inherit;
+	outline: 0;
+}
+
+.time {
+	box-sizing: inherit;
+	outline: 0;
+	color: #858585;
+	font-size: 14px;
+	line-height: 1.57142857;
+}
+
+.read-count {
+	margin-right: 14px;
+	box-sizing: inherit;
+	outline: 0;
+	color: #858585;
+	font-size: 14px;
+	line-height: 1.57142857;
+}
+
+.article-content {
+	position: relative;
+	padding-top: 16px;
+	font-size: 14px;
+	line-height: 1.57142857;
+	padding-bottom: 16px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #e3e3e3;
+}
+
+.article-author-list {
+	color: #343a40;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: .5rem .25rem;
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
+	cursor: pointer;
+	text-decoration: none;
+	background-color: transparent;
+	list-style-type: disc;
+}
+
 .article-author h5 {
 	display: inline;
 }
 
 .sidebar {
 	margin-top: 20px;
+}
+
+.author-img-big {
+	vertical-align: middle;
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+}
+
+.author-info {
+	line-height: 2;
+	margin-left: 30px;
+}
+
+.info-title {
+	color: #333;
+	font-weight: bold;
 }
 
 .top-author-img {
